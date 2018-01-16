@@ -100,10 +100,15 @@ public class MusicOrganizer
      */
     public void listMatching(String searchString)
     {
+        boolean coincidence = false;
         for (String filename : files){
             if (filename.contains(searchString)){
                 System.out.println(filename);
+                coincidence = true;
             }
+        }
+        if (!coincidence){
+            System.out.println("No se ha encontrado coincidencia");
         }
     }
 }
