@@ -111,4 +111,16 @@ public class MusicOrganizer
             System.out.println("No se ha encontrado coincidencia");
         }
     }
+    
+    /**
+     * Play a few seconds of all the songs of a specified artist.
+     */
+    public void playArtistMatching(String artist)
+    {
+        for (String filename : files){
+            if (filename.contains(artist)){
+                player.playSample(filename);
+            }
+        }
+    }
 }
