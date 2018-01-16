@@ -13,7 +13,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -22,7 +22,7 @@ public class MusicOrganizer
         files = new ArrayList<String>();
         player = new MusicPlayer();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -31,7 +31,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -40,7 +40,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -52,7 +52,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -82,7 +82,7 @@ public class MusicOrganizer
     {
         player.stop();
     }
-    
+
     /**
      * Show a list of all the files.
      */
@@ -92,6 +92,18 @@ public class MusicOrganizer
         for (String filename : files){
             System.out.println(position + ": " + filename);
             position++;
+        }
+    }
+
+    /**
+     * Show a list of all the files that match with the specified String.
+     */
+    public void listMatching(String searchString)
+    {
+        for (String filename : files){
+            if (filename.contains(searchString)){
+                System.out.println(filename);
+            }
         }
     }
 }
